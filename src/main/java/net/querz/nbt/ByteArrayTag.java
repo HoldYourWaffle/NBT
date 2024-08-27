@@ -110,7 +110,7 @@ public class ByteArrayTag extends CollectionTag<ByteTag> {
 		this.value = value;
 	}
 
-	public static final TagReader<ByteArrayTag> READER = new TagReader<>() {
+	public static final TagReader<ByteArrayTag> READER = new TagReader<ByteArrayTag>() {
 
 		@Override
 		public ByteArrayTag read(DataInput in, int depth) throws IOException {

@@ -95,7 +95,7 @@ public class IntTag extends NumberTag {
 		return String.valueOf(value);
 	}
 
-	public static final TagReader<IntTag> READER = new TagReader<>() {
+	public static final TagReader<IntTag> READER = new TagReader<IntTag>() {
 
 		@Override
 		public IntTag read(DataInput in, int depth) throws IOException {

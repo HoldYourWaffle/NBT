@@ -23,7 +23,7 @@ public class EndTag implements Tag {
 		visitor.visit(this);
 	}
 
-	public static final TagReader<EndTag> READER = new TagReader<>() {
+	public static final TagReader<EndTag> READER = new TagReader<EndTag>() {
 
 		@Override
 		public EndTag read(DataInput in, int depth) throws IOException {

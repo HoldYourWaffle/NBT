@@ -95,7 +95,7 @@ public class LongTag extends NumberTag {
 		return value + "L";
 	}
 
-	public static final TagReader<LongTag> READER = new TagReader<>() {
+	public static final TagReader<LongTag> READER = new TagReader<LongTag>() {
 
 		@Override
 		public LongTag read(DataInput in, int depth) throws IOException {

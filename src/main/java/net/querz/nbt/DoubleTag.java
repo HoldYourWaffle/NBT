@@ -93,7 +93,7 @@ public class DoubleTag extends NumberTag {
 		return value + "d";
 	}
 
-	public static final TagReader<DoubleTag> READER = new TagReader<>() {
+	public static final TagReader<DoubleTag> READER = new TagReader<DoubleTag>() {
 
 		@Override
 		public DoubleTag read(DataInput in, int depth) throws IOException {

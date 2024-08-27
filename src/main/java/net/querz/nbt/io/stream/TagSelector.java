@@ -1,6 +1,9 @@
 package net.querz.nbt.io.stream;
 
 import net.querz.nbt.TagReader;
+
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,15 +19,15 @@ public class TagSelector {
 	}
 
 	public TagSelector(String name, TagReader<?> reader) {
-		this(List.of(), name, reader);
+		this(Collections.emptyList(), name, reader);
 	}
 
 	public TagSelector(String p1, String name, TagReader<?> reader) {
-		this(List.of(p1), name, reader);
+		this(Collections.singletonList(p1), name, reader);
 	}
 
 	public TagSelector(String p1, String p2, String name, TagReader<?> reader) {
-		this(List.of(p1, p2), name, reader);
+		this(Arrays.asList(p1, p2), name, reader);
 	}
 
 	public List<String> path() {

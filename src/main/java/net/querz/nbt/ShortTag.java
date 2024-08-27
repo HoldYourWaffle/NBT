@@ -95,7 +95,7 @@ public class ShortTag extends NumberTag {
 		return value + "s";
 	}
 
-	public static final TagReader<ShortTag> READER = new TagReader<>() {
+	public static final TagReader<ShortTag> READER = new TagReader<ShortTag>() {
 
 		@Override
 		public ShortTag read(DataInput in, int depth) throws IOException {

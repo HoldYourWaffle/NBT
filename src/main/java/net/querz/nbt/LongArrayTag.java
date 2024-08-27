@@ -112,7 +112,7 @@ public class LongArrayTag extends CollectionTag<LongTag> {
 		this.value = value;
 	}
 
-	public static final TagReader<LongArrayTag> READER = new TagReader<>() {
+	public static final TagReader<LongArrayTag> READER = new TagReader<LongArrayTag>() {
 
 		@Override
 		public LongArrayTag read(DataInput in, int depth) throws IOException {

@@ -55,7 +55,7 @@ public class StringTag implements Tag {
 		return value;
 	}
 
-	public static final TagReader<StringTag> READER = new TagReader<>() {
+	public static final TagReader<StringTag> READER = new TagReader<StringTag>() {
 
 		@Override
 		public StringTag read(DataInput in, int depth) throws IOException {

@@ -92,7 +92,7 @@ public class FloatTag extends NumberTag {
 		return value + "f";
 	}
 
-	public static final TagReader<FloatTag> READER = new TagReader<>() {
+	public static final TagReader<FloatTag> READER = new TagReader<FloatTag>() {
 
 		@Override
 		public FloatTag read(DataInput in, int depth) throws IOException {

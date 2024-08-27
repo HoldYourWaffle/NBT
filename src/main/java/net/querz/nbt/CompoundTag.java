@@ -529,7 +529,7 @@ public class CompoundTag implements Tag, Map<String, Tag>, Iterable<Map.Entry<St
 		return value.entrySet();
 	}
 
-	public static final TagReader<CompoundTag> READER = new TagReader<>() {
+	public static final TagReader<CompoundTag> READER = new TagReader<CompoundTag>() {
 
 		@Override
 		public CompoundTag read(DataInput in, int depth) throws IOException {

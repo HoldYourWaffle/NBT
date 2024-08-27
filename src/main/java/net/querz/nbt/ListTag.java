@@ -219,7 +219,7 @@ public class ListTag extends CollectionTag<Tag> {
 		if (this == other) {
 			return true;
 		} else {
-			return other instanceof ListTag otherList && value.equals(otherList.value);
+			return other instanceof ListTag && value.equals(((ListTag) other).value);
 		}
 	}
 
@@ -453,7 +453,7 @@ public class ListTag extends CollectionTag<Tag> {
 
 	}
 
-	public static final TagReader<ListTag> READER = new TagReader<>() {
+	public static final TagReader<ListTag> READER = new TagReader<ListTag>() {
 
 		@Override
 		public ListTag read(DataInput in, int depth) throws IOException {

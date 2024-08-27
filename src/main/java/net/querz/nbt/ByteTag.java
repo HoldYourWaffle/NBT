@@ -98,7 +98,7 @@ public class ByteTag extends NumberTag {
 		return value + "b";
 	}
 
-	public static final TagReader<ByteTag> READER = new TagReader<>() {
+	public static final TagReader<ByteTag> READER = new TagReader<ByteTag>() {
 
 		@Override
 		public ByteTag read(DataInput in, int depth) throws IOException {
