@@ -7,7 +7,7 @@ import java.util.*;
 
 import static net.querz.nbt.Tag.Type.*;
 
-public non-sealed class CompoundTag implements Tag, Map<String, Tag>, Iterable<Map.Entry<String, Tag>> {
+public class CompoundTag implements Tag, Map<String, Tag>, Iterable<Map.Entry<String, Tag>> {
 
 	private final Map<String, Tag> value;
 

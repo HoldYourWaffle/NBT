@@ -4,7 +4,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public non-sealed class FloatTag extends NumberTag {
+public class FloatTag extends NumberTag {
 
 	private final float value;
 

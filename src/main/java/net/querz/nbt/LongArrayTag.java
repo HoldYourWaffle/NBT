@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Objects;
 
-public non-sealed class LongArrayTag extends CollectionTag<LongTag> {
+public class LongArrayTag extends CollectionTag<LongTag> {
 
 	private long[] value;
 

@@ -4,7 +4,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public non-sealed class DoubleTag extends NumberTag {
+public class DoubleTag extends NumberTag {
 
 	private final double value;
 

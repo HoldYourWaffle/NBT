@@ -4,7 +4,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public non-sealed class LongTag extends NumberTag {
+public class LongTag extends NumberTag {
 
 	private final long value;
 

@@ -10,7 +10,7 @@ import java.util.Objects;
 
 import static net.querz.nbt.Tag.Type.*;
 
-public non-sealed class ListTag extends CollectionTag<Tag> {
+public class ListTag extends CollectionTag<Tag> {
 
 	private final List<Tag> value;
 	private Type type;
