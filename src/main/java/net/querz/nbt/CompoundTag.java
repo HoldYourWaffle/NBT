@@ -475,21 +475,20 @@ public class CompoundTag implements Tag, Map<String, Tag>, Iterable<Map.Entry<St
 			}
 			Tag tag = entry.getValue();
 			switch (tag.getType()) {
-				case COMPOUND -> {
-					CompoundTag otherTag = other.getCompoundTag(entry.getKey());
-					if (!((CompoundTag) tag).partOf(otherTag)) {
+				case COMPOUND:
+					CompoundTag otherCompound = other.getCompoundTag(entry.getKey());
+					if (!((CompoundTag) tag).partOf(otherCompound)) {
 						return false;
 					}
-				}
-				case LIST -> {
-					ListTag otherTag = other.getListTag(entry.getKey());
-					if (!((ListTag) tag).partOf(otherTag)) {
+					break;
+				case LIST:
+					ListTag otherList = other.getListTag(entry.getKey());
+					if (!((ListTag) tag).partOf(otherList)) {
 						return false;
 					}
-				}
-				default -> {
+					break;
+				default:
 					return tag.equals(other.get(entry.getKey()));
-				}
 			}
 		}
 		return true;
@@ -555,38 +554,35 @@ public class CompoundTag implements Tag, Map<String, Tag>, Iterable<Map.Entry<St
 				if ((id = in.readByte()) != END.id) {
 					TagReader<?> reader = valueOf(id).reader;
 					switch (visitor.visitEntry(reader)) {
-						case RETURN -> {
+						case RETURN:
 							return TagTypeVisitor.ValueResult.RETURN;
-						}
-						case BREAK -> {
+						case BREAK:
 							StringTag.skipUTF(in);
 							reader.skip(in);
-						}
-						case SKIP -> {
+							break;
+						case SKIP:
 							StringTag.skipUTF(in);
 							reader.skip(in);
 							continue;
-						}
-						default -> {
+						default:
 							String name = in.readUTF();
 							switch (visitor.visitEntry(reader, name)) {
-								case RETURN -> {
+								case RETURN:
 									return TagTypeVisitor.ValueResult.RETURN;
-								}
-								case BREAK -> reader.skip(in);
-								case SKIP -> {
+								case BREAK:
+									reader.skip(in);
+									break;
+								case SKIP:
 									reader.skip(in);
 									continue;
-								}
-								case ENTER -> {
+								case ENTER:
 									if (reader.read(in, visitor) == TagTypeVisitor.ValueResult.RETURN) {
 										return TagTypeVisitor.ValueResult.RETURN;
 									} else {
 										continue;
 									}
-								}
 							}
-						}
+							break;
 					}
 				}
 
